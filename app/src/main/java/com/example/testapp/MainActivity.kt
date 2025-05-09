@@ -15,29 +15,30 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val listTodo = findViewById<ListView>(R.id.list_todo)
-        val userData = findViewById<EditText>(R.id.user_data)
+        val userLogin = findViewById<EditText>(R.id.user_login)
+        val userEmail = findViewById<EditText>(R.id.user_email)
+        val userPassword = findViewById<EditText>(R.id.user_password)
+
         val button = findViewById<Button>(R.id.button)
 
-        val todos = mutableListOf<String>()
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, todos)
-        listTodo.adapter = adapter
-
-        listTodo.setOnItemClickListener { _, _, position, _ ->
-
-            val text = listTodo.getItemAtPosition(position).toString()
-            adapter.remove(text)
-
-            Toast.makeText(this, "Удалено: $text", Toast.LENGTH_SHORT).show()
-        }
-
         button.setOnClickListener {
-            val textInput = userData.text.toString().trim()
-            if(textInput.isNotEmpty()){
-                adapter.add(textInput)
-                userData.text.clear()
+            val login = userLogin.text.toString().trim()
+            val email = userEmail.text.toString().trim()
+            val password = userPassword.text.toString().trim()
+
+            if(login == "" || email == "" || password == ""){
+                Toast.makeText(this, "Заполните все поля", Toast.LENGTH_LONG).show()
+            }
+            else{
+                val user = User(login, email, password)
+                val db = DbContext(this, null)
+                db.addUser(user)
+                Toast.makeText(this, "Пользователь $login добавлен", Toast.LENGTH_LONG).show()
+                userPassword.text.clear()
+                userEmail.text.clear()
+                userLogin.text.clear()
+
             }
         }
-
     }
 }
