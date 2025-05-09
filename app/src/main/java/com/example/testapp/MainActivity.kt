@@ -1,10 +1,12 @@
 package com.example.testapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,8 +20,14 @@ class MainActivity : AppCompatActivity() {
         val userLogin = findViewById<EditText>(R.id.user_login)
         val userEmail = findViewById<EditText>(R.id.user_email)
         val userPassword = findViewById<EditText>(R.id.user_password)
+        val linkToAuth = findViewById<TextView>(R.id.link_to_auth)
 
         val button = findViewById<Button>(R.id.button)
+
+        linkToAuth.setOnClickListener {
+            val intent = Intent(this, AuthActivity::class.java)
+            startActivity(intent)
+        }
 
         button.setOnClickListener {
             val login = userLogin.text.toString().trim()
