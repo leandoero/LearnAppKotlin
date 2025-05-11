@@ -12,11 +12,7 @@ class DbContext(val context: Context, val factory: SQLiteDatabase.CursorFactory?
         db.execSQL(query)
     }
 
-    override fun onUpgrade(
-        db: SQLiteDatabase,
-        oldVersion: Int,
-        newVersion: Int
-    ) {
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS users")
         onCreate(db)
     }
