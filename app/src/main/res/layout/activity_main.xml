@@ -1,77 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_bold"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-        android:layout_marginTop="170dp"
-        android:textSize="30sp"
-        android:text="Регистрация"/>
-
-    <EditText
-        android:id="@+id/user_login"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:layout_marginTop="20dp"
-        android:inputType="text"
-        android:background="@drawable/edittext_border"
-        android:hint="Введите логин"
-        android:textColorHint="#6a6a6a"/>
-
-    <EditText
-        android:id="@+id/user_email"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:inputType="text"
-        android:background="@drawable/edittext_border"
-        android:textColorHint="#6a6a6a"
-        android:hint="Введите email" />
-
-    <EditText
-        android:id="@+id/user_password"
-        android:layout_width="220dp"
-        android:background="@drawable/edittext_border"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:inputType="textPassword"
-        android:textColorHint="#6a6a6a"
-        android:hint="Введите пароль" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="250dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#e2a4"
-        android:textSize="20dp"
-        android:text="Зарегистрироваться" />
+        android:text="Hello"
+        android:textSize="20sp"
+        android:textColor="#127197"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/link_to_auth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="120dp"
-        android:text="Войти"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:text="ZALUPA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.198" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
